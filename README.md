@@ -1,6 +1,6 @@
 # Mini Swarm Vehicle
 
-A small, modular ground robot built as a platform for developing and testing for indoor research and development concepts like swarm-robotics and autonomous-navigation — self-designed mechanical chassis, electronics, and low-level motor control, driven by an NVIDIA Jetson/ Raspberry Pi 5 for onboard autonomy.
+A small, modular ground robot built as a platform for developing and testing swarm-robotics and autonomous-navigation concepts — self-designed mechanical chassis, electronics, and low-level motor control, driven by an NVIDIA Jetson for onboard autonomy.
 
 ![Assembled vehicle](images/Image_render.png)
 
