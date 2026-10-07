@@ -20,11 +20,12 @@ The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC mo
 | Drive | 2WD, differential  |
 | Dimensions (L × W × H) | 212 × 215 × 11 mm |
 | Weight | 1.5 kg  |
-| Controller | Jetson Nano / Raspberry Pi 5 & Arduino Nano |
+| Controller (High-Level) | Jetson Nano / Raspberry Pi 5 |
+| Controller (low-Level) | Arduino Nano |
 | Sensors | 2D LIDAR, Camera, IMU |
 | Motor | DC Motor with encoder  |
 | Wheel  | 65mm diameter |
-| Battery | 11.1V , 3500mah  |
+| Battery | 11.1V , 3500mah Li-ion Battery |
 ## Hardware Design
 ### Mechanical
 - **Frame:** 3 plates (bottom, middle, top), FDM 3D-printed in CPE (copolyester) — chosen for impact resistance, flexibility, and dimensional stability.
@@ -39,7 +40,6 @@ The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC mo
 - **Chassis Drawing:** Chassis plate drawings in [`docs/Chassis_Plates.pdf`](docs/Chassis_Plates.pdf).
 
 ## Electronics
-
 Schematic and PCB project designed in Altium (`hardware/altium/`): 
 
 A two-wheel drive-controller board (`Main.SchDoc`) alongside the system block diagram (`Block_Diagram.SchDoc`). PDF export in `docs/Schematic.pdf`; system-level electrical/architecture diagrams in `docs/Electrical_Block_Diagram.vsdx` and `docs/System_Overview.vsdx`.
