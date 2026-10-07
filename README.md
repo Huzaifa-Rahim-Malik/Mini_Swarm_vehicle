@@ -42,15 +42,22 @@ The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC mo
 ## Electronics
 Schematic and PCB project designed in Altium (`hardware/altium/`): 
 
-A two-wheel drive-controller board (`Main.SchDoc`) alongside the system block diagram (`Block_Diagram.SchDoc`). PDF export in `docs/Schematic.pdf`; system-level electrical/architecture diagrams in `docs/Electrical_Block_Diagram.vsdx` and `docs/System_Overview.vsdx`.
+A two-wheel drive-controller board (`Main.SchDoc`) alongside the system block diagram (`Block_Diagram.SchDoc`). 
 - **Electronics_Schematics:** [`docs/Schematic.pdf`](docs/Schematic.pdf)
+- **Electronics_BOM:** BOM is available in [`docs/Robotic_Car_BOM.xlsx`](docs/Robotic_Car_BOM.xlsx)
+- **Electronics_Wiring:** Hardware wiring is available in [`docs/Robotic_Car_Hardware_Wiring.xlsx`](docs/Robotic_Car_Hardware_Wiring.xlsx)
 
-**Core hardware:** Arduino (low-level motor/encoder control), Jetson Nano (onboard compute), encoder DC motors + motor driver shield, IMU, 2D LiDAR, depth camera, Li-ion battery.
+**Control architecture:**
 
-![Block_Diagran](images/Electronics_Block_Diagran.png)
+The Mini Swarm Vehicle divides the system into two sections:
+1. **Power distribution:** 11.1 V battery pack → motor driver shield, regulating down to drive two independent DC gear-motor channels directly from the pack.
+2. **Motor control (Arduino + driver shield):** An Arduino handles low-level motor control, interfacing with the motor driver shield over `IN1–IN4` (direction) and `ENA`/`ENB` (PWM speed enable, jumper-selectable between a fixed +5 V tie or routed through the shield's `VREF` for Arduino-driven PWM).
+    - Each drive motor is a DC geared motor with an integrated quadrature encoder (`Motor+`/`Motor−` for drive, `+5V`/`GND` for the encoder supply, `SIG_FBK1`/`SIG_FBK2` for A/B encoder channels), feeding wheel speed/position back to the Arduino.
+    - The firmware's PID-based differential-drive controller (`diff_controller.h` in `firmware/ROSArduinoBridge/`) closes the loop on encoder feedback and exposes a standard ROS-compatible serial interface, keeping real-time motor control on the Arduino, decoupled from trajectory/motion planning on the Jetson.
 
-- **Electronics_BOM:** BOM is available in[`docs/Robotic_Car_BOM.xlsx`](docs/Robotic_Car_BOM.xlsx)
-- **Electronics_Wiring:** Hardware wiring is available in[`docs/Robotic_Car_Hardware_Wiring.xlsx`](docs/Robotic_Car_Hardware_Wiring.xlsx)
+![Electronics_Block_Diagram](images/Electronics_Block_Diagram.png)
+
+
 ## Firmware 
 
 `firmware/ROSArduinoBridge/` is the Arduino-side motor/encoder driver, based on the open-source [ROSArduinoBridge](https://github.com/joshnewans/ros_arduino_bridge) library (included here largely unmodified for completeness; see `UPSTREAM_README.md` for the original project). It exposes a serial command interface so a high-level computer (e.g. running ROS) can drive the motors and read back encoder data.
