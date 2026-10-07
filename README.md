@@ -3,10 +3,13 @@
 A small, modular ground robot built as a platform for developing and testing swarm-robotics and autonomous-navigation concepts — self-designed mechanical chassis, electronics, and low-level motor control, driven by an NVIDIA Jetson for onboard autonomy.
 
 ![Assembled vehicle](images/Image_render.png)
-
+**Features:**
+- ROS 2-compatible 2WD mobile platform for indoor applications 
+- Robust 3D printed plates with DC encoder motors attached with coupling through plastic rubber tyres
+- Differential drive platform
+- Supports custom robotic algorithm development, including navigation, SLAM, and perception    
 ## Overview
-
-The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC motors + 1 passive front caster) with onboard IMU, 2D LiDAR, and a depth camera for perception, intended to operate individually or as part of a coordinated swarm. It's built around a 3-plate 3D-printed chassis, an Arduino-based low-level motor/encoder controller, and a Jetson Nano for higher-level compute — the same compute/sensing pattern later reused as a multi-vehicle swarm navigation platform.
+The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC motors + 1 passive front caster) with onboard IMU, 2D LiDAR, and a depth camera for perception, intended to operate individually or as part of a coordinated swarm. It's built around a 3-plate 3D-printed chassis, an Arduino-based low-level motor/encoder controller, and a Jetson Nano/Raspberry pi for higher-level compute — the same compute/sensing pattern later reused as a multi-vehicle swarm navigation platform.
 
 ## Mechanical Design
 
