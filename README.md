@@ -2,7 +2,7 @@
 
 A small, modular ground robot built as a platform for developing and testing swarm-robotics and autonomous-navigation concepts — self-designed mechanical chassis, electronics, and low-level motor control, driven by an NVIDIA Jetson for onboard autonomy.
 
-![Assembled vehicle](images/Vehicle_Built_1.jpg)
+![Assembled vehicle](images/Image_render.png)
 
 ## Overview
 
@@ -41,5 +41,8 @@ images/            Assembly photos, built vehicle, chassis CAD renders
 ```
 
 ## Author
-
-Muhammad Huzaifa Rahim Malik — mechanical, electrical, and firmware design.
+This project is done by the following team members
+- Dr.Muhammad Ahmad Kamran (Team Lead), AITeC Islamabad
+- Muhammad Huzaifa Rahim Malik (Electronics Design), AITeC Islamabad
+- Muhammad Mohsin Razaqi (Mechanical Design), AITeC Islamabad 
+- Muhammad Awais Khan (Algorithm Design), AITeC Islamabad
