@@ -1,0 +1,21 @@
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Altium backups / previews / logs / generated outputs
+History/
+__Previews/
+Project Outputs for*/
+Project Logs for*/
+*.~*.SchDoc
+*.~*.SchLib
+*.~*.PrjPcb
+
+# Office lock files
+.~lock.*
+
+# Build artifacts
+*.o
+*.hex
