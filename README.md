@@ -25,7 +25,8 @@ The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC mo
 | Motor | DC Motor with encoder  |
 | Wheel  | 65mm diameter |
 | Battery | 11.1V , 3500mah  |
-## Mechanical Design
+## Hardware Design
+### Mechanical
 - **Frame:** 3 plates (bottom, middle, top), FDM 3D-printed in CPE (copolyester) — chosen for impact resistance, flexibility, and dimensional stability.
   - **Bottom plate** — mounts the drive motors, caster wheel, and power electronics, with reinforced ribs at the motor mounts.
   - **Middle plate** — hosts the Jetson module and camera, with routed cable-management slots.
@@ -35,18 +36,31 @@ The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC mo
 
 ![Chassis CAD](images/Chassis_CAD_1.png)
 
-Full writeups: [`docs/Mechanical_Structure.docx`](docs/Mechanical_Structure.docx), [`docs/Technical_Description.docx`](docs/Technical_Description.docx), chassis plate drawings in [`docs/Chassis_Plates.pdf`](docs/Chassis_Plates.pdf).
+- **Chassis Drawing:** Chassis plate drawings in [`docs/Chassis_Plates.pdf`](docs/Chassis_Plates.pdf).
 
 ## Electronics
 
-Schematic and PCB project designed in Altium (`hardware/altium/`): a two-wheel drive-controller board (`Main.SchDoc`) alongside the system block diagram (`Block_Diagram.SchDoc`). PDF export in `docs/Schematic.pdf`; system-level electrical/architecture diagrams in `docs/Electrical_Block_Diagram.vsdx` and `docs/System_Overview.vsdx`.
+Schematic and PCB project designed in Altium (`hardware/altium/`): 
+
+A two-wheel drive-controller board (`Main.SchDoc`) alongside the system block diagram (`Block_Diagram.SchDoc`). PDF export in `docs/Schematic.pdf`; system-level electrical/architecture diagrams in `docs/Electrical_Block_Diagram.vsdx` and `docs/System_Overview.vsdx`.
+- **Electronics_Schematics:** [`docs/Schematic.pdf`](docs/Schematic.pdf)
 
 **Core hardware:** Arduino (low-level motor/encoder control), Jetson Nano (onboard compute), encoder DC motors + motor driver shield, IMU, 2D LiDAR, depth camera, Li-ion battery.
+
 ![Block_Diagran](images/Electronics_Block_Diagran.png)
-## Firmware
+
+- **Electronics_BOM:** BOM is available in[`docs/Robotic_Car_BOM.xlsx`](docs/Robotic_Car_BOM.xlsx)
+- **Electronics_Wiring:** Hardware wiring is available in[`docs/Robotic_Car_Hardware_Wiring.xlsx`](docs/Robotic_Car_Hardware_Wiring.xlsx)
+## Firmware 
 
 `firmware/ROSArduinoBridge/` is the Arduino-side motor/encoder driver, based on the open-source [ROSArduinoBridge](https://github.com/joshnewans/ros_arduino_bridge) library (included here largely unmodified for completeness; see `UPSTREAM_README.md` for the original project). It exposes a serial command interface so a high-level computer (e.g. running ROS) can drive the motors and read back encoder data.
 
+## Vehicle Images
+The complete vehicle assembled images is available in [`images/Vehicle_Images`](images/Vehicle_Images)
+
+![Vehicle_Built1](images/Vehicle_Images/Vehicle_Built1.jpg)
+
+![Vehicle_Built1](images/Vehicle_Images/Vehicle_Built3.jpg)
 ## Repository Structure
 
 ```
