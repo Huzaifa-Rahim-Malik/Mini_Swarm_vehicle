@@ -11,6 +11,7 @@ A small, modular ground robot built as a platform for developing and testing swa
 ## Overview
 The vehicle is a compact two-wheel differential-drive robot (2 rear geared DC motors + 1 passive front caster) with onboard IMU, 2D LiDAR, and a depth camera for perception, intended to operate individually or as part of a coordinated swarm. It's built around a 3-plate 3D-printed chassis, an Arduino-based low-level motor/encoder controller, and a Jetson Nano/Raspberry pi for higher-level compute — the same compute/sensing pattern later reused as a multi-vehicle swarm navigation platform.
 
+![Chassis CAD](images/Block_Diagran.png)
 ## Mechanical Design
 
 ![Chassis CAD](images/Chassis_CAD_1.png)
