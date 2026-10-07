@@ -51,7 +51,7 @@ A two-wheel drive-controller board (`Main.SchDoc`) alongside the system block di
 
 The Mini Swarm Vehicle divides the system into two sections:
 1. **Power distribution:** 11.1 V battery pack → motor driver shield, regulating down to drive two independent DC gear-motor channels directly from the pack.
-2. **Motor control (Arduino + driver shield):** An Arduino handles low-level motor control, interfacing with the motor driver shield over `IN1–IN4` (direction) and `ENA`/`ENB` (PWM speed enable, jumper-selectable between a fixed +5 V tie or routed through the shield's `VREF` for Arduino-driven PWM).
+2. **Motor control (Arduino + driver shield):** An Arduino handles low-level motor control, interfacing with the motor driver shield over `IN1–IN4` (direction) and `ENA`/`ENB` (PWM speed enable).
     - Each drive motor is a DC geared motor with an integrated quadrature encoder (`Motor+`/`Motor−` for drive, `+5V`/`GND` for the encoder supply, `SIG_FBK1`/`SIG_FBK2` for A/B encoder channels), feeding wheel speed/position back to the Arduino.
     - The firmware's PID-based differential-drive controller (`diff_controller.h` in `firmware/ROSArduinoBridge/`) closes the loop on encoder feedback and exposes a standard ROS-compatible serial interface, keeping real-time motor control on the Arduino, decoupled from trajectory/motion planning on the Jetson.
 
@@ -71,10 +71,11 @@ The complete vehicle assembled images is available in [`images/Vehicle_Images`](
 ## Repository Structure
 
 ```
-hardware/altium/   Altium project — block diagram & drive-controller schematic, schematic library
-firmware/          Arduino motor/encoder controller (ROSArduinoBridge-based)
-docs/              Technical description, mechanical structure doc, chassis plate drawings, schematic PDF, block/system diagrams
-images/            Assembly photos, built vehicle, chassis CAD renders
+Mini_Swarm_Vehicle/
+├── hardware/altium/       Altium project: block diagram & drive-controller schematic, schematic library
+├── firmware/              Arduino motor/encoder controller (ROSArduinoBridge-based)
+├── docs/                  Technical description, chassis plate drawings, schematic PDF, BOM, hardware wiring
+└── images/                Assembly photos (Vehicle_Images/), built vehicle, chassis CAD renders, system and block diagrams
 ```
 
 ## Author
