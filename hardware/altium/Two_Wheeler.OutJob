@@ -2,15 +2,15 @@
 Version=1.0
 
 [PublishSettings]
-OutputFilePath2=D:\NCP\Robotic Cars\Two_Wheeler_Car\Schematic\Two_Wheeler\.PDF
+OutputFilePath2=D:\Github\Mini-Swarm-Vehicle\docs\.PDF
 ReleaseManaged2=0
-OutputBasePath2=D:\NCP\Robotic Cars\Two_Wheeler_Car\Schematic\Two_Wheeler\
+OutputBasePath2=D:\Github\Mini-Swarm-Vehicle\docs\
 OutputPathMedia2=
 OutputPathMediaValue2=
 OutputPathOutputer2=[Output Type]
 OutputPathOutputerPrefix2=
 OutputPathOutputerValue2=
-OutputFileName2=Two_Wheeler.pdf
+OutputFileName2=Schematic.pdf
 OutputFileNameMulti2=
 UseOutputNameForMulti2=1
 OutputFileNameSpecial2=
@@ -81,7 +81,7 @@ WmvVideoCodecName4=Windows Media Video V7
 WmvQuality4=80
 
 [GeneratedFilesSettings]
-RelativeOutputPath2=D:\NCP\Robotic Cars\Two_Wheeler_Car\Schematic\Two_Wheeler\.PDF
+RelativeOutputPath2=D:\Github\Mini-Swarm-Vehicle\docs\.PDF
 OpenOutputs2=1
 RelativeOutputPath3=
 OpenOutputs3=1
